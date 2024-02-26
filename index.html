@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interactive Website</title>
+<style>
+  body {
+    text-align: center; /* Aligning all text to the middle */
+    font-size: 20px; /* Increasing the font size */
+  }
+  #amazon-instruction {
+    color: blue; /* Changing "AMAZON" text to blue */
+    font-weight: bold; /* Making the text bold */
+  }
+  #instruction, #result {
+    font-size: 24px; /* Making these texts even larger */
+    margin: 20px 0; /* Adding some spacing */
+  }
+</style>
+<script>
+function showAddress() {
+  var isaInput = document.getElementById('isaInput').value;
+  var address = '';
+
+  if (isaInput === '12345678') {
+    address = 'TEB4';
+  } else if (isaInput === '345678910') {
+    address = 'TEB9';
+  } else {
+    address = 'Unknown ISA';
+  }
+
+  // Displaying ISA and address together
+  document.getElementById('result').innerHTML = 'ISA: ' + isaInput + ' - Address: ' + address;
+}
+</script>
+</head>
+<body>
+
+<h1>Welcome to SMART SUPPLY CHAIN CHECK IN SYSTEM</h1>
+<p id="amazon-instruction">If you pick up for <span style="color: blue;">AMAZON</span>, please enter your #ISA below to check in.</p>
+
+<input type="text" id="isaInput">
+<button onclick="showAddress()">Submit</button>
+
+<p id="result"></p>
+
+</body>
+</html>
