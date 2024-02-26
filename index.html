@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interactive Website</title>
+<style>
+  body {
+    text-align: center; /* Aligning all text to the middle */
+    font-size: 24px; /* Text size for better visibility on phones */
+  }
+  #amazon-instruction, #instruction, h1, p {
+    font-size: 28px; /* Larger text for instructions, headings, and paragraphs */
+    margin: 20px 0; /* Adding some spacing */
+  }
+  input[type="text"], button {
+    font-size: 24px; /* Larger text size for input and button */
+    margin: 10px 0; /* Spacing around input and button */
+    padding: 15px; /* More padding for easier interaction */
+    width: 80%; /* Wider input field */
+    max-width: 600px; /* Limiting max width */
+  }
+  button {
+    cursor: pointer; /* Pointer cursor for button */
+    width: auto; /* Auto width for the button */
+  }
+  .bold {
+    font-weight: bold; /* Making text bold */
+  }
+  .highlight {
+    background-color: yellow; /* Yellow highlight for text */
+  }
+  .blue {
+    color: blue; /* Blue color for text */
+  }
+</style>
+<script>
+function showAddress() {
+  var isaInput = document.getElementById('isaInput').value;
+  var address = '';
+
+  if (isaInput === '12345678') {
+    address = 'TEB4';
+  } else if (isaInput === '345678910') {
+    address = 'TEB9';
+  } else {
+    address = 'Unknown ISA';
+  }
+
+  // Displaying ISA and address together
+  document.getElementById('result').innerHTML = 'ISA: ' + isaInput + ' - Address: ' + address;
+}
+</script>
+</head>
+<body>
+
+<h1>Welcome to SMART SUPPLY CHAIN CHECK IN SYSTEM</h1>
+<p id="amazon-instruction">If you pick up for <span class="bold blue">AMAZON</span>, please enter your <span class="bold highlight">#ISA</span> below to check in.</p>
+
+<input type="text" id="isaInput">
+<button onclick="showAddress()">Submit</button>
+
+<p id="result"></p>
+
+</body>
+</html>
