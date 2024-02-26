@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interactive Website</title>
+<style>
+  body {
+    text-align: center; /* Aligning all text to the middle */
+    font-size: 20px; /* Text size for general content */
+  }
+  #amazon-instruction {
+    color: blue; /* "AMAZON" text to blue */
+    font-weight: bold; /* Making the text bold */
+  }
+  #instruction, #result {
+    font-size: 24px; /* Larger text size for instructions and results */
+    margin: 20px 0; /* Adding some spacing */
+  }
+  input[type="text"], button {
+    font-size: 20px; /* Larger text size for input and button */
+    margin: 10px 0; /* Adding some spacing around input and button */
+    padding: 10px; /* Adding padding to make them larger */
+  }
+  button {
+    cursor: pointer; /* Change cursor to pointer when over button */
+  }
+</style>
+<script>
+function showAddress() {
+  var isaInput = document.getElementById('isaInput').value;
+  var address = '';
+
+  if (isaInput === '12345678') {
+    address = 'TEB4';
+  } else if (isaInput === '345678910') {
+    address = 'TEB9';
+  } else {
+    address = 'Unknown ISA';
+  }
+
+  // Displaying ISA and address together
+  document.getElementById('result').innerHTML = 'ISA: ' + isaInput + ' - Address: ' + address;
+}
+</script>
+</head>
+<body>
+
+<h1>Welcome to SMART SUPPLY CHAIN CHECK IN SYSTEM</h1>
+<p id="amazon-instruction">If you pick up for <span style="color: blue;">AMAZON</span>, please enter your #ISA below to check in.</p>
+
+<input type="text" id="isaInput">
+<button onclick="showAddress()">Submit</button>
+
+<p id="result"></p>
+
+</body>
+</html>
